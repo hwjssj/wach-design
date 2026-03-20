@@ -1,0 +1,3 @@
+# pnpm 工作区：声明 monorepo 内所有子包路径
+packages:
+  - "packages/*"

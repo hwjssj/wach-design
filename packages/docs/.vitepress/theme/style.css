@@ -1,0 +1,226 @@
+/**
+ * 代码示例区域样式：对齐 Element Plus / Ant Design Vue 文档
+ * - 展开条：底部横条、44px 高、hover 主题色
+ * - 复制按钮：常显或悬停、主题色反馈
+ */
+
+/* 代码块容器：边框 + 圆角，展开条在底部 */
+.vp-doc .custom-block.details {
+  margin: 16px 0;
+  padding: 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--vp-c-bg-soft);
+  display: flex;
+  flex-direction: column-reverse;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.vp-doc .custom-block.details > summary {
+  margin: 0;
+  padding: 0 16px;
+  height: 44px;
+  min-height: 44px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg-soft);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+  list-style: none;
+  user-select: none;
+}
+
+.vp-doc .custom-block.details > summary::-webkit-details-marker,
+.vp-doc .custom-block.details > summary::marker {
+  display: none;
+  content: none;
+}
+
+.vp-doc .custom-block.details > summary:hover {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg);
+}
+
+/* 展开时：文案改为“隐藏代码”（需与默认“查看代码”区分可后续用 JS 或 i18n） */
+.vp-doc .custom-block.details[open] > summary {
+  border-bottom: none;
+}
+
+/* 展开条右侧加箭头指示 */
+.vp-doc .custom-block.details > summary::after {
+  margin-left: 6px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.vp-doc .custom-block.details:not([open]) > summary::after {
+  content: "▼";
+}
+
+.vp-doc .custom-block.details[open] > summary::after {
+  content: "▲";
+}
+
+/* 代码块在 details 内：去掉多余外边距，圆角与边框衔接 */
+.vp-doc .custom-block.details div[class*="language-"] {
+  margin: 0;
+  border-radius: 8px 8px 0 0;
+  border: none;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc .custom-block.details div[class*="language-"] pre {
+  margin: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+/* 复制按钮：与 EP/AntD 一致，更易见、hover 主题色 */
+.vp-doc .custom-block.details [class*="language-"] > button.copy {
+  opacity: 1;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  top: 10px;
+  right: 10px;
+  background-size: 18px;
+  border-color: var(--vp-c-divider);
+  background-color: var(--vp-c-bg);
+}
+
+.vp-doc .custom-block.details [class*="language-"] > button.copy:hover,
+.vp-doc .custom-block.details [class*="language-"] > button.copy.copied {
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft, rgba(64, 158, 255, 0.1));
+}
+
+.vp-doc .custom-block.details [class*="language-"] > button.copy:hover {
+  background-image: var(--vp-icon-copy);
+}
+
+/* 复制成功文案：与 Element Plus / Ant Design Vue 一致 */
+.vp-doc .custom-block.details [class*="language-"] > button.copy.copied::before,
+.vp-doc .custom-block.details [class*="language-"] > button.copy:hover.copied::before {
+  content: var(--vp-code-copy-copied-text-content, "已复制");
+}
+
+/* 非 details 内的代码块：复制按钮悬停时也略加强调（可选） */
+.vp-doc [class*="language-"] > button.copy:hover,
+.vp-doc [class*="language-"] > button.copy.copied {
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-bg);
+}
+
+/**
+ * 文档整体布局
+ * - 加宽版心、侧栏更贴左（仅降低 padding-left 下限，width 仍用官方 -32px，与 VPContent 左边距严格对齐）
+ * - 有右侧大纲时放开 .content-container 的 688px 限制，示例区与正文可用满主栏
+ * - 顶栏 .content 与正文主栏使用同一套水平内边距，避免「白条」宽度不一致
+ * - 所有文档页：去掉 .VPDoc 双层水平 padding；主栏拉满（含无侧栏指南页的 752/992 窄栏）
+ * - 正文 / 示例 / 页脚同一主栏宽度
+ */
+:root {
+  --vp-layout-max-width: 1920px;
+  /* 仅替换 max(32px, …) 的下限；width 公式必须保留 -32px，否则会与 VPContent 错位 */
+  --wach-doc-side-gutter: 12px;
+  /* 主栏水平内边距：正文、DemoBlock、VPDocFooter 共用 */
+  --wach-doc-content-pad-x: 20px;
+}
+
+/* 大屏：侧栏 / 顶栏标题列 — padding 可更贴左，宽度与官方一致（末尾 -32px） */
+@media (min-width: 1440px) {
+  .VPSidebar {
+    padding-left: max(
+      var(--wach-doc-side-gutter),
+      calc((100% - (var(--vp-layout-max-width) - 64px)) / 2)
+    ) !important;
+    width: calc(
+      (100% - (var(--vp-layout-max-width) - 64px)) / 2 +
+        var(--vp-sidebar-width) - 32px
+    ) !important;
+  }
+
+  .VPNavBar.has-sidebar .title {
+    padding-left: max(
+      var(--wach-doc-side-gutter),
+      calc((100% - (var(--vp-layout-max-width) - 64px)) / 2)
+    ) !important;
+    width: calc(
+      (100% - (var(--vp-layout-max-width) - 64px)) / 2 +
+        var(--vp-sidebar-width) - 32px
+    ) !important;
+  }
+
+  /* 与 VPContent 右留白一致，并与正文 VPDoc 内边距对齐（原主题 +32px 即此意） */
+  .VPNavBar.has-sidebar .content {
+    padding-right: calc(
+      (100vw - var(--vp-layout-max-width)) / 2 + var(--wach-doc-content-pad-x)
+    ) !important;
+  }
+}
+
+/* 960–1439：顶栏右侧内边距与正文主栏一致 */
+@media (min-width: 960px) and (max-width: 1439px) {
+  .VPNavBar.has-sidebar .content {
+    padding-right: var(--wach-doc-content-pad-x) !important;
+  }
+}
+
+/* has-aside：scoped 内写死 688px，需 !important 才能让正文+示例与主栏同宽 */
+div.VPDoc.has-aside .content-container {
+  max-width: 100% !important;
+}
+
+@media (min-width: 960px) {
+  /**
+   * 所有文档页（组件 / 指南）：取消 .VPDoc 左右 padding，只保留 .content 一层水平留白
+   * 去掉 :not(.has-sidebar) 的 992/752/1104 窄版心，主栏 flex 占满（有右侧大纲时除大纲宽度外全宽）
+   */
+  div.VPDoc {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .VPDoc .container {
+    width: 100%;
+    max-width: none !important;
+  }
+
+  div.VPDoc .content {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    padding-left: var(--wach-doc-content-pad-x);
+    padding-right: var(--wach-doc-content-pad-x);
+  }
+
+  .VPDoc .content-container,
+  .VPDoc .main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .VPDoc .vp-doc {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/**
+ * PageHeader「全屏任务编辑页头部导航」文档示例：与 DSL / Pixso 1920×48 画布同宽，便于像素级对照
+ */
+.vp-doc .page-header-dsl-canvas {
+  width: 1920px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: #fff;
+  overflow-x: auto;
+}

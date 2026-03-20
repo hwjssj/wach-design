@@ -1,0 +1,15 @@
+{
+  "name": "wach-design-monorepo",
+  "private": true,
+  "description": "wach-design 组件库 monorepo 根目录（不发布到 npm）",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --filter wach-design build",
+    "dev:docs": "pnpm --filter wach-docs dev",
+    "build:docs": "pnpm --filter wach-docs build"
+  }
+}

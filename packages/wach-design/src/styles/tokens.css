@@ -1,0 +1,328 @@
+/**
+ * wach-design 设计 Token（CSS 变量）
+ * 使用方覆盖：在 :root 或 html.dark 前定义同名变量即可
+ */
+:root {
+  --wach-color-primary: #409eff;
+  --wach-color-primary-hover: #66b1ff;
+  --wach-color-text: #303133;
+  --wach-color-text-secondary: #606266;
+  --wach-color-border: #dcdfe6;
+  --wach-color-bg: #ffffff;
+  --wach-color-bg-soft: #f5f7fa;
+
+  --wach-radius-sm: 4px;
+  --wach-radius-md: 6px;
+  --wach-radius-lg: 8px;
+
+  --wach-font-size-sm: 12px;
+  --wach-font-size-md: 14px;
+  --wach-font-size-lg: 16px;
+
+  --wach-spacing-xs: 4px;
+  --wach-spacing-sm: 8px;
+  --wach-spacing-md: 12px;
+  --wach-spacing-lg: 16px;
+
+  /* 按钮（对齐 DevUI 按钮-次要 JSON 解析规范） */
+  --wach-btn-secondary-bg: #ffffff;
+  --wach-btn-secondary-border: 1px solid #c9c9c9;
+  --wach-btn-secondary-border-color: #c9c9c9;
+  --wach-btn-secondary-text: #191919;
+  --wach-btn-secondary-radius: 4px;
+  --wach-btn-primary-bg: #409eff;
+  --wach-btn-primary-border: 1px solid #409eff;
+  --wach-btn-primary-text: #ffffff;
+  --wach-btn-primary-hover-bg: #66b1ff;
+  --wach-btn-primary-hover-border: #66b1ff;
+  --wach-btn-font-family: "HarmonyOS Sans SC", system-ui, sans-serif;
+  --wach-btn-font-size-md: 14px;
+  --wach-btn-font-weight: 400;
+  --wach-btn-line-height: 22px;
+  --wach-btn-height-md: 32px;
+  --wach-btn-padding-x-md: 16px;
+
+  /* 页签 Slider（对齐 DevUI 页签 Slider.json 解析规范） */
+  --wach-tabs-nav-bg: rgba(25, 25, 25, 0.05);
+  --wach-tabs-nav-height: 32px;
+  --wach-tabs-nav-radius: 4px;
+  --wach-tabs-nav-gap: 2px;
+  --wach-tabs-pill-bg-active: #ffffff;
+  --wach-tabs-pill-bg-default: transparent;
+  --wach-tabs-pill-height: 28px;
+  --wach-tabs-pill-min-width: 74px;
+  --wach-tabs-pill-radius: 4px;
+  --wach-tabs-pill-padding-x: 16px;
+  --wach-tabs-tab-font: "HarmonyOS Sans SC", system-ui, sans-serif;
+  --wach-tabs-tab-font-size: 14px;
+  --wach-tabs-tab-line-height: 22px;
+  --wach-tabs-tab-color-active: #191919;
+  --wach-tabs-tab-color-default: #777777;
+  --wach-tabs-tab-color-disabled: #b3b3b3;
+  --wach-tabs-tab-weight-active: 500;
+  --wach-tabs-tab-weight-default: 400;
+  --wach-tabs-content-padding: 16px;
+
+  /* 单选框（对齐 DevUI 单选框文本组合.json 解析规范） */
+  --wach-radio-size: 16px;
+  --wach-radio-bg: #ffffff;
+  --wach-radio-border-color: #c9c9c9;
+  --wach-radio-checked-bg: var(--wach-color-primary);
+  --wach-radio-checked-border-color: var(--wach-color-primary);
+  --wach-radio-disabled-color: #b3b3b3;
+  --wach-radio-label-gap: 8px;
+  --wach-radio-label-color: #191919;
+  --wach-radio-label-font: "HarmonyOS Sans SC", system-ui, sans-serif;
+  --wach-radio-label-font-size: 14px;
+  --wach-radio-label-font-weight: 400;
+  --wach-radio-label-line-height: 22px;
+
+  /* 分类搜索（对齐 DevUI 分类搜索.json 解析规范） */
+  --wach-category-search-height: 32px;
+  --wach-category-search-radius: 6px;
+  --wach-category-search-gap: 8px;
+  --wach-category-search-font-size: 14px;
+  --wach-category-search-font-weight: 400;
+  --wach-category-search-line-height: 22px;
+  --wach-category-search-font-family: "HarmonyOS Sans SC", system-ui, sans-serif;
+  --wach-category-search-border-color: #c9c9c9;
+  --wach-category-search-input-padding-x: 12px;
+  --wach-category-search-box-padding-x: 8px;
+  --wach-category-search-icon-size: 16px;
+  --wach-category-search-icon-gap: 8px;
+  --wach-category-search-icon-color: #191919;
+  --wach-category-search-placeholder-color: #aeaeae;
+  --wach-category-search-tag-bg: rgba(64, 158, 255, 0.1);
+
+  /* PageHeader：简单模式参考 Ant Design；导航模式对齐 全屏任务编辑页头部导航.json */
+  --wach-page-header-bg: #ffffff;
+  --wach-page-header-padding: 16px 24px;
+  --wach-page-header-border-color: #f3f3f3;
+  --wach-page-header-title-size: 20px;
+  --wach-page-header-title-weight: 600;
+  --wach-page-header-title-line-height: 32px;
+  --wach-page-header-title-color: #191919;
+  --wach-page-header-subtitle-size: 14px;
+  --wach-page-header-subtitle-line-height: 22px;
+  --wach-page-header-subtitle-color: rgba(0, 0, 0, 0.45);
+  --wach-page-header-footer-border: #f0f0f0;
+  --wach-page-header-breadcrumb-gap: 12px;
+  --wach-page-header-main-gap: 12px;
+  --wach-page-header-footer-margin-top: 12px;
+  --wach-page-header-footer-padding-top: 12px;
+  --wach-page-header-back-gap: 8px;
+  /* 全屏任务编辑页头部导航（带页签） */
+  --wach-page-header-nav-height: 48px;
+  --wach-page-header-nav-padding-x: 20px;
+  /* 标题+返回 区域最大宽（JSON 96:84890 w=287，与左侧页签起点 x=323 间距 16px） */
+  --wach-page-header-nav-left-max: 287px;
+  --wach-page-header-nav-font-family: "HarmonyOS Sans SC", system-ui, sans-serif;
+  /* 与标题区左缘间距 = 323 - (20+287) = 16 */
+  --wach-page-header-bar-gap: 16px;
+  /* 相对导航条顶：标题区 y=11、页签区 y=6、右侧按钮 y=8（全屏任务编辑页头部导航.json） */
+  --wach-page-header-nav-offset-left-y: 11px;
+  --wach-page-header-nav-offset-tabs-y: 6px;
+  --wach-page-header-nav-offset-actions-y: 8px;
+  --wach-page-header-nav-title-size: 18px;
+  --wach-page-header-nav-title-weight: 700;
+  --wach-page-header-nav-title-line-height: 26px;
+  --wach-page-header-tab-min-width: 88px;
+  --wach-page-header-tab-height: 42px;
+  --wach-page-header-tab-active-bg: #f3f3f3;
+  --wach-page-header-tab-active-border: #f3f3f3;
+  --wach-page-header-tab-text-active: #191919;
+  --wach-page-header-tab-text-default: #777777;
+  --wach-page-header-tab-font-size: 14px;
+  --wach-page-header-tab-line-height: 22px;
+  --wach-page-header-tab-weight-active: 500;
+  --wach-page-header-tab-weight-default: 400;
+  --wach-page-header-tab-radius: 4px;
+  --wach-page-header-action-gap: 8px;
+  --wach-page-header-action-primary-bg: #5e7ce0;
+  --wach-page-header-action-primary-hover: #4e6dcf;
+  --wach-page-header-action-primary-text: #ffffff;
+
+  /* 折叠面板 / 手风琴（Pixso「手风琴.json」侧栏样式） */
+  --wach-accordion-bg: transparent;
+  --wach-accordion-width: 216px;
+  --wach-accordion-item-gap: 4px;
+  --wach-accordion-radius: 4px;
+  --wach-accordion-row-height: 36px;
+  --wach-accordion-header-padding: 7px 8px;
+  --wach-accordion-header-font-size: 14px;
+  --wach-accordion-header-font-weight: 500;
+  --wach-accordion-header-color: #191919;
+  --wach-accordion-header-bg: #ffffff;
+  --wach-accordion-header-bg-hover: #f5f7fa;
+  --wach-accordion-badge-bg: #f3f3f3;
+  --wach-accordion-badge-border: 1px solid #ffffff;
+  --wach-accordion-badge-color: #777777;
+  --wach-accordion-badge-font-size: 12px;
+  --wach-accordion-badge-min-width: 29px;
+  --wach-accordion-badge-height: 16px;
+  --wach-accordion-icon-color: #191919;
+  --wach-accordion-content-gap: 4px;
+  --wach-accordion-sub-indent: 24px;
+  --wach-accordion-sub-color: #191919;
+  --wach-accordion-disabled-opacity: 0.45;
+  /* 兼容旧变量名（文档/自定义覆盖） */
+  --wach-accordion-border-color: transparent;
+  --wach-accordion-content-font-size: 14px;
+  --wach-accordion-content-line-height: 22px;
+  --wach-accordion-content-color: #606266;
+  --wach-accordion-content-padding: 0;
+
+  /* Form 表单（对齐 DevUI d-form + DSL「表单项-文本输入框.json」） */
+  --wach-form-font-family: "HarmonyOS Sans SC", system-ui, sans-serif;
+  --wach-form-font-size: 14px;
+  --wach-form-line-height: 22px;
+  /* DSL：文字颜色/主要文字 token/devui-text #191919 */
+  --wach-form-text-color: #191919;
+  --wach-form-label-color: #191919;
+  --wach-form-item-margin-bottom: 18px;
+  /* DSL：标题区 h=22，输入区 y=30 → 间距 8px */
+  --wach-form-item-label-gap: 8px;
+  --wach-form-item-inline-gap: 12px;
+  --wach-form-item-label-padding-top: 5px;
+  --wach-form-item-label-inner-gap: 4px;
+  --wach-form-required-color: #f56c6c;
+  --wach-form-error-color: #f56c6c;
+  --wach-form-error-font-size: 12px;
+  --wach-form-error-line-height: 18px;
+  --wach-form-error-margin-top: 4px;
+  --wach-form-error-border-color: #f56c6c;
+  /* DSL：文本输入框 32px 高、圆角 4、边框 devui-form-control-line #c9c9c9、白底 */
+  --wach-form-control-height: 32px;
+  --wach-form-control-border: 1px solid #c9c9c9;
+  --wach-form-control-border-hover: #aeaeae;
+  --wach-form-control-border-focus: var(--wach-color-primary);
+  --wach-form-control-radius: 4px;
+  --wach-form-control-bg: #ffffff;
+  --wach-form-control-padding-x: 12px;
+  --wach-form-control-padding-y: 5px;
+  --wach-form-control-text-color: #191919;
+  --wach-form-control-disabled-opacity: 0.65;
+  --wach-form-control-bg-disabled: #f5f5f5;
+  /* DSL：占位 devui-placeholder #aeaeae */
+  --wach-form-placeholder-color: #aeaeae;
+  --wach-form-help-icon-color: #aeaeae;
+  --wach-form-help-icon-hover-color: #777777;
+
+  /* Table 表格（Pixso「表格-（自由编排）单行表格.json」自由版-表格-单行 + DevUI d-table） */
+  --wach-table-font-family: "HarmonyOS Sans SC", system-ui, sans-serif;
+  --wach-table-bg: #ffffff;
+  /* 容器圆角 8px、外阴影 y=1 blur=6 rgba(0,0,0,0.08) */
+  --wach-table-radius: 8px;
+  --wach-table-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.08);
+  /* 行高 42px；行间底边 #f3f3f3（标题行/数据行 FRAME 的 bd bottom） */
+  --wach-table-row-min-height: 42px;
+  --wach-table-row-separator: 1px solid #f3f3f3;
+  /* 表头 TEXT：12px / 700 / lh20 / #191919 */
+  --wach-table-header-bg: #ffffff;
+  --wach-table-header-font-size: 12px;
+  --wach-table-header-line-height: 20px;
+  --wach-table-header-weight: 700;
+  --wach-table-header-color: #191919;
+  --wach-table-header-padding-y: 11px;
+  /* 单元格 TEXT：14px / 400 / #191919（行高约 22） */
+  --wach-table-cell-font-size: 14px;
+  --wach-table-cell-line-height: 22px;
+  --wach-table-cell-weight: 400;
+  --wach-table-cell-color: #191919;
+  --wach-table-cell-padding-x: 16px;
+  --wach-table-cell-padding-y: 10px;
+  /* 斑马纹行底纹 #f3f3f3（偶数行 FRAME bc） */
+  --wach-table-stripe-bg: #f3f3f3;
+  --wach-table-row-hover-bg: #fafafa;
+  --wach-table-text-color: #191919;
+  /* 全表格线模式（border=true） */
+  --wach-table-border: 1px solid #f3f3f3;
+  --wach-table-cell-border: 1px solid #f3f3f3;
+  /* 紧凑尺寸（非 DSL 默认，保留） */
+  --wach-table-font-size-sm: 12px;
+  --wach-table-line-height-sm: 20px;
+  --wach-table-cell-padding-x-sm: 10px;
+  --wach-table-cell-padding-y-sm: 6px;
+  --wach-table-empty-color: #909399;
+  --wach-table-empty-padding: 24px 16px;
+  --wach-table-mask-bg: rgba(255, 255, 255, 0.65);
+  --wach-table-spinner-track: #e4e7ed;
+}
+
+/* 根节点使用 class="dark"（与 VitePress 暗色一致） */
+html.dark {
+  --wach-color-primary: #409eff;
+  --wach-color-primary-hover: #79bbff;
+  --wach-color-text: #e5eaf3;
+  --wach-color-text-secondary: #a3a6ad;
+  --wach-color-border: #4c4d4f;
+  --wach-color-bg: #1d1e1f;
+  --wach-color-bg-soft: #252526;
+
+  --wach-btn-secondary-bg: #252526;
+  --wach-btn-secondary-border-color: #4c4d4f;
+  --wach-btn-secondary-text: #e5eaf3;
+  --wach-btn-secondary-border: 1px solid #4c4d4f;
+
+  --wach-tabs-nav-bg: rgba(255, 255, 255, 0.06);
+  --wach-tabs-pill-bg-active: #252526;
+  --wach-tabs-tab-color-active: #e5eaf3;
+  --wach-tabs-tab-color-default: #a3a6ad;
+  --wach-tabs-tab-color-disabled: #6b6b6b;
+
+  --wach-radio-disabled-color: #6b6b6b;
+  --wach-radio-bg: #252526;
+  --wach-radio-border-color: #4c4d4f;
+  --wach-radio-label-color: #e5eaf3;
+
+  --wach-category-search-border-color: #4c4d4f;
+  --wach-category-search-icon-color: #e5eaf3;
+  --wach-category-search-placeholder-color: #8a8a8a;
+
+  --wach-page-header-bg: #1d1e1f;
+  --wach-page-header-border-color: #303030;
+  --wach-page-header-title-color: rgba(255, 255, 255, 0.88);
+  --wach-page-header-subtitle-color: rgba(255, 255, 255, 0.45);
+  --wach-page-header-footer-border: #303030;
+  --wach-page-header-tab-active-bg: #2a2a2a;
+  --wach-page-header-tab-active-border: #303030;
+  --wach-page-header-tab-text-active: #e5eaf3;
+  --wach-page-header-tab-text-default: #a3a6ad;
+
+  --wach-accordion-bg: transparent;
+  --wach-accordion-header-bg: #1d1e1f;
+  --wach-accordion-header-bg-hover: #252526;
+  --wach-accordion-header-color: #e5eaf3;
+  --wach-accordion-badge-bg: #2a2a2a;
+  --wach-accordion-badge-border: 1px solid #303030;
+  --wach-accordion-badge-color: #a3a6ad;
+  --wach-accordion-icon-color: #e5eaf3;
+  --wach-accordion-sub-color: #e5eaf3;
+  --wach-accordion-content-color: #a3a6ad;
+
+  --wach-form-text-color: #e5eaf3;
+  --wach-form-label-color: #e5eaf3;
+  --wach-form-control-bg: #252526;
+  --wach-form-control-border: 1px solid #4c4d4f;
+  --wach-form-control-border-hover: #6b6b6b;
+  --wach-form-control-text-color: #e5eaf3;
+  --wach-form-placeholder-color: #8a8a8a;
+  --wach-form-help-icon-color: #8a8a8a;
+  --wach-form-help-icon-hover-color: #a3a6ad;
+  --wach-form-error-border-color: #f56c6c;
+
+  --wach-table-bg: #1d1e1f;
+  --wach-table-text-color: #e5eaf3;
+  --wach-table-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.35);
+  --wach-table-row-separator: 1px solid #303030;
+  --wach-table-header-bg: #1d1e1f;
+  --wach-table-header-color: #e5eaf3;
+  --wach-table-cell-color: #e5eaf3;
+  --wach-table-border: 1px solid #303030;
+  --wach-table-cell-border: 1px solid #303030;
+  --wach-table-row-hover-bg: #2a2a2a;
+  --wach-table-stripe-bg: #252526;
+  --wach-table-empty-color: #a3a6ad;
+  --wach-table-mask-bg: rgba(29, 30, 31, 0.7);
+  --wach-table-spinner-track: #4c4d4f;
+}
