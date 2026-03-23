@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",
+    "dev:network": "vitepress dev --host 0.0.0.0",
     "build": "vitepress build",
     "preview": "vitepress preview"
   },

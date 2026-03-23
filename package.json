@@ -10,6 +10,7 @@
   "scripts": {
     "build": "pnpm --filter wach-design build",
     "dev:docs": "pnpm --filter wach-docs dev",
+    "dev:docs:network": "pnpm --filter wach-docs dev:network",
     "build:docs": "pnpm --filter wach-docs build"
   }
 }

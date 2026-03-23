@@ -13,7 +13,8 @@ Vue 3 组件库 **wach-design** 的 monorepo：可发布 npm 的组件包 + Vite
 |------|------|
 | `pnpm install` | 根目录安装全部依赖 |
 | `pnpm build` | 构建组件库产物到 `packages/wach-design/dist` |
-| `pnpm dev:docs` | 启动文档站（VitePress，端口以终端为准） |
+| `pnpm dev:docs` | 启动文档站（仅本机访问） |
+| `pnpm dev:docs:network` | 启动文档站（局域网可访问，`--host 0.0.0.0`） |
 | `pnpm build:docs` | 构建静态文档 |
 
 ## 文档与说明
